@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>Que gato sou eu?</h1>
+    <form action="/cat" method="post">
+        <input type="text" name="nome" placeholder="Informe seu nome">
+        <button type="submit">Localizar o gato</button>
+
+    </form>
+    <hr>
+    {% if url_imagem %}
+    <img src="{{url_imagem}}" class="imagem-gato" />
+    <p class="nome_gato">{{nome}}, esse gato é você!</p>
+    {% else %}
+    <img src="../static/ChatGPT Image 13 de fev. de 2026, 13_55_13.png" class="imagem-gato" />
+    {% endif %}
+
+</body>
+</html>
